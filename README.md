@@ -27,6 +27,7 @@ In the Runtime mode PELMS transfer the Petri Net information to the connected ES
     ```python
     pip install -r requirements.txt
     ```
+    ou
 
     ```python
     pip3 install -r requirements.txt
@@ -36,6 +37,12 @@ In the Runtime mode PELMS transfer the Petri Net information to the connected ES
 
     ```python
     python main.py
+    ```
+    ou
+   
+   ```python
+    chmod +X main.py
+    ./main.py
     ```
 
 
