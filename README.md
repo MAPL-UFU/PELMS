@@ -13,6 +13,7 @@ In the Runtime mode PELMS transfer the Petri Net information to the connected ES
 
 1. Install Python3
 
+    ```python
     sudo apt update
     sudo apt upgrade -y
     sudo apt install python3
@@ -31,7 +32,6 @@ In the Runtime mode PELMS transfer the Petri Net information to the connected ES
 
     ```python
     pip3 install -r requirements.txt
-    ```
 
 4. Execute script
 
@@ -43,7 +43,6 @@ In the Runtime mode PELMS transfer the Petri Net information to the connected ES
    ```python
     chmod +X main.py
     ./main.py
-    ```
 
 
 ## COMPILING EXECUTABLE ON WINDOWS
@@ -52,11 +51,9 @@ Although the method above is preferable and also applicable for windows OS, a se
 1. Install Pyinstaller
     ```python
     pip install pyinstaller
-    ```
 2. Execute script
     ```python
     pyinstaller --onefile -w main.py
-    ```
 The execuble built is found in the dist directory.
 
 # PNRD/iPNRD ESP32 Library
