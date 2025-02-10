@@ -1,0 +1,51 @@
+{
+    "pnmlFile": "/mnt/c/Users/engal/Downloads/PFC/PELMS-Simulation/PELMS-MQTT-main/PNMLexamples/Bearing_Quality_Testing.pnml",
+    "qtdReaders": 7,
+    "readerListConfig": [
+        {
+            "IP": "192.168.1.10",
+            "qtdAntenna": 1,
+            "readerName": "Machine 0"
+        },
+        {
+            "IP": "192.168.1.11",
+            "qtdAntenna": 1,
+            "readerName": "Machine 1"
+        },
+        {
+            "IP": "192.168.1.12",
+            "qtdAntenna": 1,
+            "readerName": "Machine 2"
+        },
+        {
+            "IP": "192.168.1.13",
+            "qtdAntenna": 1,
+            "readerName": "Machine 3"
+        },
+        {
+            "IP": "192.168.1.14",
+            "qtdAntenna": 1,
+            "readerName": "Machine 4"
+        },
+        {
+            "IP": "192.168.1.15",
+            "qtdAntenna": 1,
+            "readerName": "Machine 5"
+        },
+        {
+            "IP": "192.168.1.16",
+            "qtdAntenna": 1,
+            "readerName": "Machine 6"
+        }
+    ],
+    "transitionNames": [
+        "transition 0",
+        "transition 1",
+        "transition 2",
+        "transition 3",
+        "transition 4",
+        "transition 5",
+        "transition 6"
+    ],
+    "type": "PNRD"
+}
