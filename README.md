@@ -32,15 +32,22 @@ In the Runtime mode PELMS transfer the Petri Net information to the connected ES
 
     ```python
     pip3 install -r requirements.txt
+    ```
+    If it's not working, try this command:
+    ```python
+    python3 -m pip install numpy
+    python3 -m pip install paho-mqtt
+    python3 -m pip install pyqt5
+    ```
 
-4. Execute script
+5. Execute script
 
     ```python
     python main.py
     ```
     ou
    
-   ```python
+    ```python
     chmod +X main.py
     ./main.py
 
