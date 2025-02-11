@@ -176,15 +176,15 @@ class PelmsGui():
                     self.pnrd_mqtt['date'] = dt.now().strftime("%m/%d/%Y")
                     self.pnrd_mqtt['time'] = dt.now().strftime("%H:%M:%S")
 
-                    self.ui.incMatrix2_tw.item(self.count_col, self.pnrd.len_places).setBackground(QColor('White'))
+                    self.ui.incMatrix2_tw.item(self.count_col, self.pnrd.len_places).setBackground(QColor("White"))
                     self.count_col = int(self.pnrd_mqtt['fire'])
                     if self.pnrd_mqtt['error'].lower() == "no_error":
-                        self.ui.incMatrix2_tw.item(self.count_col, self.pnrd.len_places).setBackground(QColor('LightGreen'))
+                        self.ui.incMatrix2_tw.item(self.count_col, self.pnrd.len_places).setBackground(QColor("LightGreen"))
                         self.mqtt_fire(self.pnrd_mqtt['fire'])
                     elif self.pnrd_mqtt['error'].lower() == "exception":
-                        self.ui.incMatrix2_tw.item(self.count_col, self.pnrd.len_places).setBackground(QColor('Tomato'))
+                        self.ui.incMatrix2_tw.item(self.count_col, self.pnrd.len_places).setBackground(QColor("Tomato"))
                     else:
-                        self.ui.incMatrix2_tw.item(self.count_col, self.pnrd.len_places).setBackground(QColor('Gold'))
+                        self.ui.incMatrix2_tw.item(self.count_col, self.pnrd.len_places).setBackground(QColor("Gold"))
 
                     #print(self.pnrd_mqtt)
                     runtime = FileCreator('pelmsSetup/runtime', self.pathName, 'runtime', 'pnrd')
@@ -590,8 +590,8 @@ class PelmsGui():
 
         self.ui.markingVector2_tw.setItem(count_col[0], 0, QTableWidgetItem("0"))
         self.ui.markingVector2_tw.setItem(count_col[1], 0, QTableWidgetItem("1"))
-        self.ui.markingVector2_tw.item(count_col[0], 0).setBackground(QColor('White'))
-        self.ui.markingVector2_tw.item(count_col[1], 0).setBackground(QColor('LightGreen'))
+        self.ui.markingVector2_tw.item(count_col[0], 0).setBackground(QColor("White"))
+        self.ui.markingVector2_tw.item(count_col[1], 0).setBackground(QColor("LightGreen"))
 
 #-------------------------------------------- Run if the file is the main  --------------------------------------------
 if __name__ == "__main__":
