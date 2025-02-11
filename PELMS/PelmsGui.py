@@ -69,10 +69,10 @@ class PelmsGui():
         #--------------------------------------------    MQTT Variables    --------------------------------------------
         #self.brokerName = 'Mosquitto'
         #self.broker = 'test.mosquitto.org'
-        #self.brokerName = 'MAPL'
-        #self.broker = '200.19.144.16'
-        self.brokerName = 'RPi-MAPL'
-        self.broker = '192.168.1.13'
+        self.brokerName = 'MAPL'
+        self.broker = '200.19.144.16'
+        #self.brokerName = 'RPi-MAPL'
+        #self.broker = '192.168.1.13'
         #self.brokerName = 'RPi-MAPL'
         #self.broker = '192.168.12.9'
         self.port = 1883
@@ -258,7 +258,7 @@ class PelmsGui():
 #-------------------------------------------------- Open PELMS File  --------------------------------------------------
     #--------------------------------------- Run Petri Net and call for display ---------------------------------------
     def PNRD_pelms_runtime(self, fileName):
-        with open(self.pathName + fileName, 'r')as pelms_file:
+        with open(self.pathName + fileName, encoding='utf8') if sys.platform == 'win32' else open(self.pathName + fileName, 'r') as pelms_file:
             pelms = json.load(pelms_file)
             _,success = self.pnrd.set_pnml(pelms["pnmlFile"])
             if success:
@@ -283,7 +283,7 @@ class PelmsGui():
     #---------------------------------------------- Run Open PELMS File  ----------------------------------------------
     def open_pelms_file(self):
         self.fileName, _ = QFileDialog.getOpenFileName(filter ="PELMS (*.pelms)")
-        self.pathName = (os.path.dirname(os.path.abspath(self.fileName))).replace("/pelmsSetup", "")
+        self.pathName = (os.path.dirname(os.path.abspath(self.fileName))).replace("\\","/").replace("//","/").replace("/pelmsSetup", "")
         fileName = self.fileName.replace(self.pathName, "")
         self.fileName = self.pathName.split('/')[-1]
 
@@ -299,7 +299,7 @@ class PelmsGui():
 #------------------------------------------------- Create PELMS Files -------------------------------------------------
     # TODO
     def create_PELMS_file(self):
-        path = (f'{QFileDialog.getSaveFileName(directory = self.fileName, filter ="All Files (*.*)", )[0]}').replace(f'{self.fileName}/','') if 'PNMLexamples' in self.pathName else self.pathName
+        path = (f'{QFileDialog.getExistingDirectory(None, "Select a Folder")}') if 'PNMLexamples' in self.pathName else self.pathName
         path = path if self.fileName in path else f'{path}/{self.fileName}'
         self.pelms_type = self.ui.setupPelms_comboBox.currentText()
         self.get_transition_names(self.pnrd.len_transitions,self.pnrd.len_places)
@@ -531,7 +531,7 @@ class PelmsGui():
 
     #---------------------------------------------- Publish PNRD Message ----------------------------------------------
     def publish_mqtt(self, fileName, type = False):
-        with open(self.pathName + f'/{fileName}', 'r') as mqtt:
+        with open(self.pathName + f'/{fileName}', encoding='utf8') if sys.platform == 'win32' else open(self.pathName + f'/{fileName}', 'r') as mqtt:
             file_text = mqtt.read().splitlines()
             topic = ""
 
