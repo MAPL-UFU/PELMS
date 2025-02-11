@@ -36,7 +36,7 @@ In the Runtime mode PELMS transfer the Petri Net information to the connected ES
     If it's not working, try this command:
     ```python
     python3 -m pip install numpy
-    python3 -m pip install paho-mqtt
+    python3 -m pip install paho-mqtt==1.6.1
     python3 -m pip install pyqt5
     ```
 
