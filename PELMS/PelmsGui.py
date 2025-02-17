@@ -364,8 +364,8 @@ class PelmsGui():
 
             wifi_h.set_text(
                 template_reader_h(
-                    'TROJANUBL',
-                    'CABRAL12',
+                    'XXXX',
+                    'XXXX',
                     'ESP32-RECORDER',
                     self.broker,
                     1883,
