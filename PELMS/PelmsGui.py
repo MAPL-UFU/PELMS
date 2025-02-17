@@ -588,7 +588,7 @@ class PelmsGui():
             if flag[0] and flag[1]:
                 break
 
-        self.ui.markingVector2_tw.setItem(count_col[0], 0, QTableWidgetItem("0"))
+        self.ui.markingVector2_tw.setItem(int(count_col[0]), 0, QTableWidgetItem("0"))
         self.ui.markingVector2_tw.setItem(count_col[1], 0, QTableWidgetItem("1"))
         self.ui.markingVector2_tw.item(count_col[0], 0).setBackground(QColor("White"))
         self.ui.markingVector2_tw.item(count_col[1], 0).setBackground(QColor("LightGreen"))
