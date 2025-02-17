@@ -42,7 +42,7 @@ def template_recorder(pelmsType, topic):
     finalText = ''
 
     with open(f'{pathName}/template_begin.ino', encoding='utf8') if sys.platform == 'win32' else open(f'{pathName}/template_begin.ino', "r") as begin:
-        with open(f'{pathName}/template_reader_{pelmsType}.ino', encoding='utf8') if sys.platform == 'win32' else open(f'{pathName}/template_recorder_{pelmsType}.ino', "r") as pnrd:
+        with open(f'{pathName}/template_recorder_{pelmsType}.ino', encoding='utf8') if sys.platform == 'win32' else open(f'{pathName}/template_recorder_{pelmsType}.ino', "r") as pnrd:
                 finalText = '\n'.join(map(str, begin.read().splitlines())) + "\n\n" + '\n'.join(map(str, pnrd.read().splitlines()))
 
     if pelmsType == 'pnrd':
@@ -70,7 +70,7 @@ def template_reader(pelmsType, topic):
     finalText = ''
 
     with open(f'{pathName}/template_begin.ino', encoding='utf8') if sys.platform == 'win32' else open(f'{pathName}/template_begin.ino', "r") as begin:
-        with open(f'{pathName}/template_reader_{pelmsType}.ino', encoding='utf8') if sys.platform == 'win32' else open(f'{pathName}/template_recorder_{pelmsType}.ino', "r") as pnrd:
+        with open(f'{pathName}/template_reader_{pelmsType}.ino', encoding='utf8') if sys.platform == 'win32' else open(f'{pathName}/template_reader_{pelmsType}.ino', "r") as pnrd:
                 finalText = '\n'.join(map(str, begin.read().splitlines())) + "\n\n" + '\n'.join(map(str, pnrd.read().splitlines()))
 
     if pelmsType == 'pnrd':
